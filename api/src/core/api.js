@@ -56,7 +56,7 @@ export const runAPI = async (express, app, __dirname, isPrimary = true) => {
                 return friendlyServiceName(e);
             }),
         },
-        git,
+        // git,
     })
 
     const handleRateExceeded = (_, res) => {
