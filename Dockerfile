@@ -20,6 +20,8 @@ WORKDIR /app
 COPY --from=build --chown=node:node /prod/api /app
 COPY --from=build --chown=node:node /app/.git /app/.git
 
+RUN echo '{"$($API_KEY)":{"name":"default"}}' > keys.json
+
 USER node
 
 EXPOSE 9000
