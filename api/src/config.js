@@ -1,8 +1,8 @@
-import { getVersion } from "@imput/version-info";
+// import { getVersion } from "@imput/version-info";
 import { services } from "./processing/service-config.js";
 import { supportsReusePort } from "./misc/cluster.js";
 
-const version = await getVersion();
+// const version = await getVersion();
 
 const disabledServices = process.env.DISABLED_SERVICES?.split(',') || [];
 const enabledServices = new Set(Object.keys(services).filter(e => {
@@ -55,7 +55,7 @@ const env = {
 }
 
 const genericUserAgent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36";
-const cobaltUserAgent = `cobalt/${version} (+https://github.com/imputnet/cobalt)`;
+const cobaltUserAgent = `cobalt (+https://github.com/imputnet/cobalt)`;
 
 export const setTunnelPort = (port) => env.tunnelPort = port;
 export const isCluster = env.instanceCount > 1;
